@@ -17,7 +17,7 @@ import client from "../../client";
              error: "Photo not found.",
            };
          }
-         const photo = await client.photo.update({
+         await client.photo.update({
            where: {
              id,
            },
@@ -25,7 +25,9 @@ import client from "../../client";
              caption,
            },
          });
-         console.log(photo);
+         return {
+            ok: true,
+          };
        }
      ),
    },
